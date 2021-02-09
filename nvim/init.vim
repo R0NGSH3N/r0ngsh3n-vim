@@ -63,9 +63,11 @@ set wildmode=longest:list,full
 let g:alduin_Shout_Dragon_aspect = 1
 colorscheme alduin
 
-nnoremap :W :w
-nnoremap :Q :q
 
+" Note: Make sure the function is defined before `vim-buffet` is loaded.
+function! g:BuffetSetCustomColors()
+  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#00FF00 guifg=#000000
+endfunction
 
 " Vundle config start
 filetype off
@@ -87,6 +89,10 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'bagrat/vim-buffet'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+
 
 " Vundle config send
 call vundle#end()
@@ -105,6 +111,44 @@ noremap  <leader>t : NERDTreeToggle<CR>
 nnoremap <leader>l : set relativenumber! set number! \| set number? set relativenumber? <CR>
 nnoremap <leader>ps : sp<CR>
 nnoremap <leader>pv : vsp<CR>
+" easymotion search
+noremap  <Leader>f  <Plug>(easymotion-bd-w)
+nnoremap  <Leader>f <Plug>(easymotion-overwin-w)
+" tab switcher
+nmap <leader>1 <Plug>BuffetSwitch(1)
+nmap <leader>2 <Plug>BuffetSwitch(2)
+nmap <leader>3 <Plug>BuffetSwitch(3)
+nmap <leader>4 <Plug>BuffetSwitch(4)
+nmap <leader>5 <Plug>BuffetSwitch(5)
+nmap <leader>6 <Plug>BuffetSwitch(6)
+nmap <leader>7 <Plug>BuffetSwitch(7)
+nmap <leader>8 <Plug>BuffetSwitch(8)
+nmap <leader>9 <Plug>BuffetSwitch(9)
+nmap <leader>0 <Plug>BuffetSwitch(10)
+
+noremap <Tab> :bn<CR>
+noremap <S-Tab> :bp<CR>
+"noremap <Leader><Tab> :Bw<CR>
+"noremap <Leader><S-Tab> :Bw!<CR>
+noremap <C-t> :tabnew split<CR>
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+nnoremap :W :w
+nnoremap :Q :q
 
 let g:airline_theme='simple'
+let g:NERDTreeWinSize=60
+let g:buffet_show_index=1
 
+let g:buffet_powerline_separators = 1
+let g:buffet_tab_icon = "\uf00a"
+let g:buffet_left_trunc_icon = "\uf0a8"
+let g:buffet_right_trunc_icon = "\uf0a9"
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_airline_statusline = 1
+let vim_markdown_preview_github=1
