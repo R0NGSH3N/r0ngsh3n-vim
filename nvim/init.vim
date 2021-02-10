@@ -131,7 +131,8 @@ noremap <Tab> :bn<CR>
 noremap <S-Tab> :bp<CR>
 "noremap <Leader><Tab> :Bw<CR>
 "noremap <Leader><S-Tab> :Bw!<CR>
-noremap <C-t> :tabnew split<CR>
+noremap <C-t> :tabnew<CR>
+noremap <C-n> :bd<CR>
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -277,3 +278,8 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+"java related
+inoremap pris<Space>  private String s;<CR>
+inoremap prii<Space>  private Integer i;<CR>
+
