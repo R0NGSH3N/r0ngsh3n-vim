@@ -1,0 +1,133 @@
+" change leader key
+let mapleader=" "
+
+" set up tab/space
+set tabstop=4 softtabstop=4 expandtab
+
+" setup shift width
+set shiftwidth=4 ">> << == 4 characters
+set smartindent
+
+set showmode "show it is n/i/v mode at the bottom
+set showcmd "show incomplete command
+set encoding=utf-8
+
+
+"set line number
+"set number
+set relativenumber "show the current line number and relative line number for other
+set cursorline    "draw line in current line
+
+"text
+set textwidth=80
+set nowrap
+set laststatus=2 "show status line
+"set linebreak "only break when not in word
+"set wrpmargin=2
+set scrolloff=5
+set ruler
+set colorcolumn=80
+
+
+"search
+set showmatch "show match on parens
+set hlsearch  "set highlight on search
+set incsearch "set incremental search
+set ignorecase smartcase
+
+"spelling
+"set spell spelllang=en_us
+
+" set up bell
+set noerrorbells visualbell
+set autochdir "change current work directory to the file current in edit
+
+set autoread
+
+set list lcs=trail:·,tab:»· "listchars
+
+set wildmenu
+set wildmode=longest:list,full
+
+"Emulated Plugins
+set surround
+set multiple-cursors
+set ideajoin
+
+
+" Use Q for formatting the current paragraph (or visual selection) -- need to
+" test
+vmap Q gq
+nmap Q gqap
+
+" Closing tabs
+nmap <leader>q :action CloseContent<cr>
+nmap <leader>Q :action ReopenClosedTab<cr>
+
+" Splits manipulation
+nmap <leader>ps :action SplitHorizontally<cr>
+nmap <leader>pv :action SplitVertically<cr>
+nmap <leader>wc :action Unsplit<cr>
+nmap <leader>wC :action UnsplitAll<cr>
+"nmap <leader><leader> :action VimFilePrevious<cr>
+
+" To navigate between split panes
+nmap <leader>wn :action NextSplitter<cr>
+nmap <leader>wp :action PrevSplitter<cr>
+
+
+" Navigation
+nmap <leader>h :action Back<cr>
+nmap <leader>l :action Forward<cr>
+nmap <leader>L :action RecentLocations<cr>
+nmap <leader>g :action GotoDeclaration<cr>
+nmap <leader>u :action FindUsages<cr>
+nmap <leader>f :action GotoFile<cr>
+nmap <leader>c :action GotoClass<cr>
+nmap <leader>s :action GotoSymbol<cr>
+" nmap <leader>m :action FileStructurePopup<cr>
+nmap <leader>; :action FileStructurePopup<cr>
+nmap <leader>M :action ActivateStructureToolWindow<cr>
+nmap <leader>d :action ShowErrorDescription<cr>
+nmap <leader>i :action GotoImplementation<cr>
+nmap <leader>I :action SelectIn<cr>
+nmap <leader>e :action RecentFiles<cr>
+nmap <leader>t :action GotoTest<cr>
+nmap <leader>p :action JumpToLastWindow<cr>
+nmap <leader>b :action ShowBookmarks<cr>
+nmap <leader>a :action RecentChangedFiles<cr>
+nmap <leader>x :action GotoNextError<cr>
+nmap <leader>X :action GotoPreviousError<cr>
+" Tabs
+nnoremap [b :action PreviousTab<cr>
+nnoremap ]b :action NextTab<cr>
+
+" Refactoring
+vmap T :action Refactorings.QuickListPopupAction<cr>
+nmap <leader>rr :action RenameElement<cr>
+nmap <leader>rg :action Generate<cr>
+nmap <leader>rI :action OptimizeImports<cr>
+" Inspection
+nmap <leader>rc :action InspectCode<cr>
+
+" Building, Running and Debugging
+nmap ,c :action CompileDirty<cr>
+nmap ,r :action Run<cr>
+nmap ,R :action RunAnything<cr>
+nmap ,b :action Debug<cr>
+nmap ,c :action RunClass<cr>
+nmap ,d :action DebugClass<cr>
+nmap ,t :action RerunTests<cr>                                         
+nmap ,T :action RerunFailedTests<cr>
+
+"indent
+filetype indent on "based on different type of file, use different indent policy
+set autoindent   "autoindent
+
+
+nmap <leader><leader> : set relativenumber! \| set relativenumber? <CR>
+
+"java related
+inoremap pris<Space>  private String s;<CR>
+inoremap prii<Space>  private Integer i;<CR>
+
