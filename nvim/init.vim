@@ -1,5 +1,5 @@
 " change leader key
-let mapleader=","
+let mapleader=" "
 
 " set up tab/space
 set tabstop=4 softtabstop=4 expandtab
